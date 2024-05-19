@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Doom Emacs初步使用 - Kwebi&#39;s blog</title><meta name="Description" content="Kwebi的博客"><meta property="og:url" content="http://localhost:1313/doom-emacs%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8/">
+  <meta property="og:site_name" content="Kwebi&#39;s blog">
+  <meta property="og:title" content="Doom Emacs初步使用">
+  <meta property="og:description" content="几年前稍微玩过Emacs,但没有深入，虽然现在也不算精通，不过起码还能融入日常使用，也算入门吧。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-04-27T18:30:57+00:00">
+    <meta property="article:modified_time" content="2022-04-27T18:30:57+00:00">
+    <meta property="article:tag" content="Emacs">
+    <meta property="og:image" content="http://localhost:1313/%E9%A6%96%E9%A1%B5%E4%B8%AD%E9%97%B4%E7%9A%84%E5%9B%BE%E7%89%87">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/%E9%A6%96%E9%A1%B5%E4%B8%AD%E9%97%B4%E7%9A%84%E5%9B%BE%E7%89%87">
+  <meta name="twitter:title" content="Doom Emacs初步使用">
+  <meta name="twitter:description" content="几年前稍微玩过Emacs,但没有深入，虽然现在也不算精通，不过起码还能融入日常使用，也算入门吧。">
+<meta name="application-name" content="Kwebi&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="Kwebi&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/doom-emacs%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8/" /><link rel="prev" href="http://localhost:1313/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" /><link rel="next" href="http://localhost:1313/wsl%E8%A3%85%E9%9D%92%E9%BE%99/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Doom Emacs初步使用",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/doom-emacs%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8\/"
+        },"genre": "posts","keywords": "Emacs","wordcount":  955 ,
+        "url": "http:\/\/localhost:1313\/doom-emacs%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8\/","datePublished": "2022-04-27T18:30:57+00:00","dateModified": "2022-04-27T18:30:57+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "kwebi"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="normal" data-header-mobile="normal"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Kwebi&#39;s blog">Kwebi的博客</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Kwebi&#39;s blog">Kwebi的博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Doom Emacs初步使用</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>kwebi</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-04-27">2022-04-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 955 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#首先安装">首先安装</a></li>
+    <li><a href="#代理">代理</a></li>
+    <li><a href="#快捷键">快捷键</a></li>
+    <li><a href="#开启编程语言插件">开启编程语言插件</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>几年前稍微玩过<code>Emacs</code>,但没有深入，虽然现在也不算精通，不过起码还能融入日常使用，也算入门吧。</p>
+<p>国内很多教程都是教怎么配置，怎么写<code>Emacs Lisp</code>，殊不知，这样反而会打击新人的积极性，毕竟很麻烦，很多人没有这个耐心一个个配。不如先拿一个现成的使用，后面的个性化配置等用熟后再学也不迟。</p>
+<h2 id="首先安装">首先安装</h2>
+<p>国内已有很多教程，这里给出他们的链接，建议安装版本为27</p>
+<ul>
+<li><a href="https://book.emacs-china.org/#org7522f55" target="_blank" rel="noopener noreffer ">21 天学会 Emacs（2022 Edition）</a></li>
+<li><a href="https://github.com/hlissner/doom-emacs/blob/master/docs/getting_started.org" target="_blank" rel="noopener noreffer ">Doom Emacs 的教程</a></li>
+<li><a href="https://hkvim.com/post/windows-setup/" target="_blank" rel="noopener noreffer ">Windows用户通过WSL2 安装Emacs</a></li>
+</ul>
+<h2 id="代理">代理</h2>
+<p><code>Doom Emacs</code>安装方式一般是通过克隆github上的仓库来进行的，直接克隆将会非常慢而且容易失败，这里提供一些解决办法</p>
+<p>以Windows中的WSL2为例，首先Windows系统上要挂上代理(SSR，V2Ray等等)，建议把Windows上的git也开启代理，在powershell上输入如下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># HTTP/HTTPS 协议，port 需与代理软件设置的一致</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git config –-global http.proxy http://127.0.0.1:port
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># SOCKS5 协议</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git config --global http.proxy socks5://127.0.0.1:port
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>对代理软件要允许它访问局域网。然后在WSL的终端的~目录下中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim ~/.proxyrc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 输入如下内容后，键入Esc 和 : x保存</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 7890换成自己的代理软件端口</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#!/bin/bash</span>
+</span></span><span class="line"><span class="cl"><span class="nv">host_ip</span><span class="o">=</span><span class="k">$(</span>cat /etc/resolv.conf <span class="p">|</span>grep <span class="s2">&#34;nameserver&#34;</span> <span class="p">|</span>cut -f <span class="m">2</span> -d <span class="s2">&#34; &#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">ALL_PROXY</span><span class="o">=</span><span class="s2">&#34;http://</span><span class="nv">$host_ip</span><span class="s2">:7890&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 退出后在终端输入</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> .proxyrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>当然也可以选择安装proxychains</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install proxychains
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo nano /etc/proxychains.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 改为如下，ip和端口改为windows上的ip和代理的端口</span>
+</span></span><span class="line"><span class="cl">socks5  127.0.0.1 <span class="m">8888</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 要运行时，在前面假释proxychains即可，如：</span>
+</span></span><span class="line"><span class="cl">proxychains curl -i google.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后就可以快速克隆 Doom Emacs的仓库了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone --depth <span class="m">1</span> https://github.com/hlissner/doom-emacs ~/.emacs.d
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">~/.emacs.d/bin/doom install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="快捷键">快捷键</h2>
+<p>执行完毕后即可键入<code>emacs</code>打开了，下面介绍一些基本操作，如果你会简单的Vim操作那么更简单，因为Doom Emacs天然支持Vim操作，按Ctr+Z可以进行切换</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">可供参考链接：
+</span></span><span class="line"><span class="cl">https://noelwelsh.com/posts/doom-emacs/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>按键</th>
+<th style="text-align:center">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spc+b</td>
+<td style="text-align:center">缓冲区操作</td>
+</tr>
+<tr>
+<td>Spc+w</td>
+<td style="text-align:center">窗口操作</td>
+</tr>
+<tr>
+<td>Spc+f</td>
+<td style="text-align:center">文件操作</td>
+</tr>
+<tr>
+<td>Spc+:</td>
+<td style="text-align:center">等同于M+x,可输入指令</td>
+</tr>
+<tr>
+<td>Spc+TAB</td>
+<td style="text-align:center">workspace操作</td>
+</tr>
+<tr>
+<td>Spc+h</td>
+<td style="text-align:center">帮助文档</td>
+</tr>
+<tr>
+<td>Spc+s</td>
+<td style="text-align:center">搜索文件、缓冲区等</td>
+</tr>
+<tr>
+<td>M+x eshell</td>
+<td style="text-align:center">打开终端</td>
+</tr>
+<tr>
+<td>Spc+q</td>
+<td style="text-align:center">退出</td>
+</tr>
+</tbody>
+</table>
+<p>这些只要你键入前两个，后面的选项会提示,相当方便。
+vim相关操作不需要太多，懂等i,esc,v等相关操作和对应的模式即可。
+以上，一个高配版vim就完成了</p>
+<h2 id="开启编程语言插件">开启编程语言插件</h2>
+<p>进入<code>~/.doom.d/init.el</code> 把<code>lsp</code> 前面的注释去掉，并把下方对应的语言开启
+以上即可进行快乐的玩耍使用了。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-04-27</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/emacs/">Emacs</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" class="prev" rel="prev" title="在服务器上部署项目"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>在服务器上部署项目</a>
+            <a href="/wsl%E8%A3%85%E9%9D%92%E9%BE%99/" class="next" rel="next" title="windows安装wsl和青龙面板">windows安装wsl和青龙面板<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2018 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">kwebi</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"","algoliaIndex":"","algoliaSearchKey":"","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

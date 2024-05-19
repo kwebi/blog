@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>abc341_E - Kwebi&#39;s blog</title><meta name="Description" content="Kwebi的博客"><meta property="og:url" content="http://localhost:1313/abc341_e/">
+  <meta property="og:site_name" content="Kwebi&#39;s blog">
+  <meta property="og:title" content="abc341_E">
+  <meta property="og:description" content="题目链接如下：E - Alternating String 题目大意如下：一个由 0 和 1 组成的长度为 𝑁 的字符串，如果字符串中任意两个连续的字符都不相同，则称为良好字符串。进行以下操">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-05-19T16:48:08+08:00">
+    <meta property="article:modified_time" content="2024-05-19T16:48:08+08:00">
+    <meta property="og:image" content="http://localhost:1313/%E9%A6%96%E9%A1%B5%E4%B8%AD%E9%97%B4%E7%9A%84%E5%9B%BE%E7%89%87">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/%E9%A6%96%E9%A1%B5%E4%B8%AD%E9%97%B4%E7%9A%84%E5%9B%BE%E7%89%87">
+  <meta name="twitter:title" content="abc341_E">
+  <meta name="twitter:description" content="题目链接如下：E - Alternating String 题目大意如下：一个由 0 和 1 组成的长度为 𝑁 的字符串，如果字符串中任意两个连续的字符都不相同，则称为良好字符串。进行以下操">
+<meta name="application-name" content="Kwebi&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="Kwebi&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/abc341_e/" /><link rel="prev" href="http://localhost:1313/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E5%88%B0hugo/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "abc341_E",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/abc341_e\/"
+        },"genre": "posts","wordcount":  1338 ,
+        "url": "http:\/\/localhost:1313\/abc341_e\/","datePublished": "2024-05-19T16:48:08+08:00","dateModified": "2024-05-19T16:48:08+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "kwebi"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="normal" data-header-mobile="normal"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Kwebi&#39;s blog">Kwebi的博客</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Kwebi&#39;s blog">Kwebi的博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">abc341_E</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>kwebi</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-05-19">2024-05-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1338 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>题目链接如下：<a href="https://atcoder.jp/contests/abc341/tasks/abc341_e" target="_blank" rel="noopener noreffer ">E - Alternating String</a></p>
+<p>题目大意如下：一个由 0 和 1 组成的长度为 𝑁 的字符串，如果字符串中任意两个连续的字符都不相同，则称为良好字符串。进行以下操作 𝑄 次： 1是从 𝐿 到 𝑅 翻转字符串， 0 变 1 ， 1 变 0 。2是判断 𝐿 到 𝑅 是否为良好字符串。
+$$
+（1≤N,Q≤5×10^5)
+$$</p>
+<p>思路如下：Q为 5×10^5 ，那么总体复杂度不超过 𝑛𝑙𝑜𝑔𝑛 。可以看出规律，一个字符串是否为良好字符串，可以分为左右两个字符串，左边和右边必须都为良好字符串，并且两个字符串连接处必须不相同。可以看出具有结合律性质，用线段树进行解决。L到R翻转，不影响L到R是否为良好字符串，所以每次翻转，打上标记，然后将代表L..R区间的树节点的左右改变一下，如果是翻转打上标记的区间的子区间，那么需要下放懒标记，直到修改区间，再维护一下父节点状态。查询带有懒标记的一个子区间，也同样需要下放，再维护。</p>
+<p>构造线段树：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">struct Node {
+</span></span><span class="line"><span class="cl">    short v = -1; // 值，good string为0，否则为1
+</span></span><span class="line"><span class="cl">    short lv, rv;
+</span></span><span class="line"><span class="cl">    short lz = 0;//懒标记
+</span></span><span class="line"><span class="cl">};
+</span></span><span class="line"><span class="cl">void maintain(vector&lt;Node&gt;&amp; tr, int o)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    Node ln = tr[o * 2];
+</span></span><span class="line"><span class="cl">    Node rn = tr[o * 2 + 1];
+</span></span><span class="line"><span class="cl">    tr[o].lv = ln.lv;
+</span></span><span class="line"><span class="cl">    tr[o].rv = rn.rv;
+</span></span><span class="line"><span class="cl">    if (ln.v == 1 &amp;&amp; rn.v == 1 &amp;&amp; ln.rv != rn.lv) { // 维护信息,两个区间结合，判断是否为good string
+</span></span><span class="line"><span class="cl">        tr[o].v = 1;
+</span></span><span class="line"><span class="cl">    } else {
+</span></span><span class="line"><span class="cl">        tr[o].v = 0;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">void build(vector&lt;Node&gt;&amp; tr, int l, int r, int o)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    if (l == r) {
+</span></span><span class="line"><span class="cl">        tr[o].v = 1;
+</span></span><span class="line"><span class="cl">        tr[o].lv = a[l];
+</span></span><span class="line"><span class="cl">        tr[o].rv = a[l];
+</span></span><span class="line"><span class="cl">        return;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    int mid = (l + r) / 2;
+</span></span><span class="line"><span class="cl">    build(tr, l, mid, o * 2);
+</span></span><span class="line"><span class="cl">    build(tr, mid + 1, r, o * 2 + 1);
+</span></span><span class="line"><span class="cl">    maintain(tr, o);
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>翻转L到R：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">void revNode(Node&amp; n)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    n.lz ^= 1;
+</span></span><span class="line"><span class="cl">    n.lv ^= 1;
+</span></span><span class="line"><span class="cl">    n.rv ^= 1;
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">void lowdown(vector&lt;Node&gt;&amp; tr, int o) // 下放懒标记
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    tr[o].lz = 0;
+</span></span><span class="line"><span class="cl">    revNode(tr[o * 2]);
+</span></span><span class="line"><span class="cl">    revNode(tr[o * 2 + 1]);
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">void query1(vector&lt;Node&gt;&amp; tr, int l, int r, int ql, int qr, int o)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    if (ql == l &amp;&amp; qr == r) {
+</span></span><span class="line"><span class="cl">        revNode(tr[o]);
+</span></span><span class="line"><span class="cl">        if (l == r)
+</span></span><span class="line"><span class="cl">            tr[o].lz = 0;
+</span></span><span class="line"><span class="cl">        return;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    if (tr[o].lz == 1) { // 传递懒标记
+</span></span><span class="line"><span class="cl">        lowdown(tr, o);
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    int mid = (l + r) / 2;
+</span></span><span class="line"><span class="cl">    if (qr &lt;= mid) {
+</span></span><span class="line"><span class="cl">        query1(tr, l, mid, ql, qr, o * 2);
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    if (ql &gt; mid) {
+</span></span><span class="line"><span class="cl">        query1(tr, mid + 1, r, ql, qr, o * 2 + 1);
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    if (ql &lt;= mid &amp;&amp; qr &gt; mid) {
+</span></span><span class="line"><span class="cl">        query1(tr, l, mid, ql, mid, o * 2);
+</span></span><span class="line"><span class="cl">        query1(tr, mid + 1, r, mid + 1, qr, o * 2 + 1);
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    maintain(tr, o);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查询L到R：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Node query2(vector&lt;Node&gt;&amp; tr, int l, int r, int ql, int qr, int o)
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    if (ql == l &amp;&amp; qr == r) {
+</span></span><span class="line"><span class="cl">        return tr[o];
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    int mid = (l + r) / 2;
+</span></span><span class="line"><span class="cl">    if (tr[o].lz == 1) { // 传递懒标记
+</span></span><span class="line"><span class="cl">        lowdown(tr, o);
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    if (qr &lt;= mid) {
+</span></span><span class="line"><span class="cl">        Node ln = query2(tr, l, mid, ql, qr, o * 2);
+</span></span><span class="line"><span class="cl">        return ln;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    if (ql &gt; mid) {
+</span></span><span class="line"><span class="cl">        Node rn = query2(tr, mid + 1, r, ql, qr, o * 2 + 1);
+</span></span><span class="line"><span class="cl">        return rn;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    if (ql &lt;= mid &amp;&amp; qr &gt; mid) {
+</span></span><span class="line"><span class="cl">        Node ln = query2(tr, l, mid, ql, mid, o * 2);
+</span></span><span class="line"><span class="cl">        Node rn = query2(tr, mid + 1, r, mid + 1, qr, o * 2 + 1);
+</span></span><span class="line"><span class="cl">        maintain(tr, o);
+</span></span><span class="line"><span class="cl">        Node res;
+</span></span><span class="line"><span class="cl">        res.lv = ln.lv;
+</span></span><span class="line"><span class="cl">        res.rv = rn.rv;
+</span></span><span class="line"><span class="cl">        if (ln.v == 1 &amp;&amp; rn.v == 1 &amp;&amp; ln.rv != rn.lv) { // 合并区间维护是否为好字符串信息
+</span></span><span class="line"><span class="cl">            res.v = 1;
+</span></span><span class="line"><span class="cl">        } else {
+</span></span><span class="line"><span class="cl">            res.v = 0;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        return res;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>主函数如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;math.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;queue&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">ll</span> <span class="o">=</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Node</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">short</span> <span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">// 值，good string为0，否则为1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">short</span> <span class="n">lv</span><span class="p">,</span> <span class="n">rv</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">short</span> <span class="n">lz</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">short</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">(</span><span class="mi">500005</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">tr</span><span class="p">(</span><span class="mi">2000005</span> <span class="o">+</span> <span class="mi">1024</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">500005</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">build</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">q</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">t</span><span class="p">,</span> <span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">t</span> <span class="o">&gt;&gt;</span> <span class="n">ql</span> <span class="o">&gt;&gt;</span> <span class="n">qr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">query1</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">query2</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Yes&#34;</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;No&#34;</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>官方题解使用的是前后比较后得出的数组A，数组Ai表示的是 𝑆𝑖 是否等于 𝑆𝑖+1，每次翻转，影响的只有此数组的两边，所以线段树只需单点修改，无需带懒标记的区间修改。常数更小。查询L到R，只需判断L到R-1是否都为1即可，可以用区间和判断。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-05-19</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E5%88%B0hugo/" class="prev" rel="prev" title="迁移博客到hugo&#43;LoveIt"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>迁移博客到hugo+LoveIt</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2018 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">kwebi</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"","algoliaIndex":"","algoliaSearchKey":"","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

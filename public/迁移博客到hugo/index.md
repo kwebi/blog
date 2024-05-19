@@ -1,8 +1,5 @@
----
-title: "迁移博客到hugo+LoveIt"
-date: 2024-05-19T11:19:42+08:00
-draft: true
----
+# 迁移博客到hugo+LoveIt
+
 
 ### 前言
 
@@ -845,4 +842,5 @@ git remote -v #查看remote仓库有哪些
 git remote set-url origin https://github.com/username/newname.git #origin可自定义
 git push origin <branch name> #可以是main或者master等
 ```
+
 

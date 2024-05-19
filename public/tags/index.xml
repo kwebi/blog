@@ -1,0 +1,55 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - 标签 - Kwebi&#39;s blog</title>
+        <link>http://localhost:1313/tags/</link>
+        <description>Tags - 标签 - Kwebi&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 27 Nov 2023 18:30:57 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Wsl</title>
+    <link>http://localhost:1313/tags/wsl/</link>
+    <pubDate>Mon, 27 Nov 2023 18:30:57 &#43;0000</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/tags/wsl/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Emacs</title>
+    <link>http://localhost:1313/tags/emacs/</link>
+    <pubDate>Wed, 27 Apr 2022 18:30:57 &#43;0000</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/tags/emacs/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Linux</title>
+    <link>http://localhost:1313/tags/linux/</link>
+    <pubDate>Sat, 11 Jul 2020 15:17:19 &#43;0000</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/tags/linux/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>JavaScript</title>
+    <link>http://localhost:1313/tags/javascript/</link>
+    <pubDate>Tue, 28 Apr 2020 13:02:27 &#43;0000</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/tags/javascript/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>C&#43;&#43;</title>
+    <link>http://localhost:1313/tags/c&#43;&#43;/</link>
+    <pubDate>Sun, 24 Feb 2019 15:06:34 &#43;0800</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/tags/c&#43;&#43;/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>学习</title>
+    <link>http://localhost:1313/tags/%E5%AD%A6%E4%B9%A0/</link>
+    <pubDate>Thu, 29 Nov 2018 16:48:08 &#43;0000</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/tags/%E5%AD%A6%E4%B9%A0/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,33 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>JavaScript - 标签 - Kwebi&#39;s blog</title>
+        <link>http://localhost:1313/tags/javascript/</link>
+        <description>JavaScript - 标签 - Kwebi&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 28 Apr 2020 13:02:27 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+    <title>JavaScript中闭包和this的一些理解</title>
+    <link>http://localhost:1313/javascript%E4%B8%AD%E9%97%AD%E5%8C%85%E5%92%8Cthis%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/</link>
+    <pubDate>Tue, 28 Apr 2020 13:02:27 &#43;0000</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/javascript%E4%B8%AD%E9%97%AD%E5%8C%85%E5%92%8Cthis%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/</guid>
+    <description><![CDATA[<h3 id="循环与闭包">循环与闭包</h3>
+<p>在一次面试中，面试官出了这样一道题，让我说出运行结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">setTimeout</span><span class="p">(()=&gt;{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span><span class="nx">i</span><span class="o">*</span><span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item>
+</channel>
+</rss>

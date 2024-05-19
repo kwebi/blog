@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Wsl - 标签 - Kwebi&#39;s blog</title>
+        <link>http://localhost:1313/tags/wsl/</link>
+        <description>Wsl - 标签 - Kwebi&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 27 Nov 2023 18:30:57 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/wsl/" rel="self" type="application/rss+xml" /><item>
+    <title>windows安装wsl和青龙面板</title>
+    <link>http://localhost:1313/wsl%E8%A3%85%E9%9D%92%E9%BE%99/</link>
+    <pubDate>Mon, 27 Nov 2023 18:30:57 &#43;0000</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/wsl%E8%A3%85%E9%9D%92%E9%BE%99/</guid>
+    <description><![CDATA[安装WSL 在cmd中输入以下命令： 1 wsl --install 有疑问可看下面文章 如何使用 WSL 在 Windows 上安装 需要注意的点是系统版本不能太低。 如果中途显示访问失败可以考虑更]]></description>
+</item>
+</channel>
+</rss>
