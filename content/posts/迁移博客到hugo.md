@@ -753,47 +753,9 @@ git push
 
 > 提示：Github 是不会把空文件夹同步的，这个问题不大，不影响后面的操作。
 
-2. 利用 github Action
+2. 利用 github Action自动化部署
 
-- 添加 gh-pages.yml 文件
-  在 D:\Hblog\blog 下新建一个文件，名称为.github，然后在.github 夹下新建一个文件夹 workflows，再在 workflows 文件夹下新建一个文件叫 gh-pages.yml 在 gh-pages.yml 输入以下内容后保存。
-
-```yaml
-name: github pages
-
-on:
-  push:
-    branches:
-      - main  # Set a branch to deploy
-  pull_request:
-
-jobs:
-  deploy:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-              fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-          # extended: true
-
-      - name: Build
-        run: hugo --minify
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-```
-
-把这次修改同步到 github
+[Hugo 白话文 | GitHub Action 自动部署](https://zhuanlan.zhihu.com/p/470491820?utm_id=0)
 
 ```bash
 git status
@@ -801,5 +763,76 @@ git add .
 git commit -m "new"
 git push
 ```
-
 成功后，找到刚刚的 Github 仓库，点击 Actions ，就可以看到我们的网站部署成功。
+
+
+#### 创建ssh key
+```bash
+ssh-keygen -t rsa -b 4096 -C "1565718281@qq.com"
+# Generating public/private rsa key pair. Enter file in which to save the key (/Users/tc/.ssh/id_rsa):
+
+# 输入你需要指定的文件，比如 /.ssh/id_rsa_hugo_deploy
+```
+#### 配置博客静态资源仓库的deploy keys
+
+打开github网页，把刚刚生成的公钥（.pub结尾）放到xxx.github.io仓库的deploy keys里面
+
+#### 配置博客源内容仓库的 Secrets
+
+打开github网页，把刚刚生成的私钥放到blog源仓库的repository secrets里面，记住自定义的秘钥名字，后面要用。
+
+### github action
+
+- 添加 gh-pages.yml 文件
+  在 D:\Hblog\blog 下新建一个文件，名称为.github，然后在.github 夹下新建一个文件夹 workflows，再在 workflows 文件夹下新建一个文件叫 gh-pages.yml 在 gh-pages.yml 输入以下内容后保存。
+
+把这次修改同步到 github
+```yaml
+name: Deploy Hugo Site to Github Pages on Master Branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.76.0'
+          # extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.BLOG_SECRET }}
+          external_repository: kwebi/kwebi.github.io # remote branch
+          publish_dir: "./docs"
+        #   cname: blog.funnycode.org.cn          
+          keep_files: false # remove existing files
+          publish_branch: main  # deploying branch
+          commit_message: ${{ github.event.head_commit.message }}
+
+```
+
+- publish_dir 指定发布的目录，./docs 指 blog 项目下的 docs 目录下的内容会被发布
+- publish_branch 发布到 kwebi.github.io 项目的 docs 分支
+- secrets.BLOG_SECRET 的 BLOG_SECRET 则是上面设置 Private Key 的变量名
+<!-- - cname 必须要配置好，和下文提到的 Setting 里面配置图对应 -->
+
+#### kwebi.github.io 配置
+
+- 配置 Setting
+`publish_dir` 如果是`"./docs"` 相应的gitpages Source的目录也要更改
+
