@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>CodeForces - 标签 - Kwebi&#39;s blog</title>
+        <link>http://localhost:1313/tags/codeforces/</link>
+        <description>CodeForces - 标签 - Kwebi&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 19 May 2024 22:21:09 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/codeforces/" rel="self" type="application/rss+xml" /><item>
+    <title>CodeForces 1163B2个人题解</title>
+    <link>http://localhost:1313/codeforces-1163b2%E4%B8%AA%E4%BA%BA%E9%A2%98%E8%A7%A3/</link>
+    <pubDate>Sun, 19 May 2024 22:21:09 &#43;0800</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/codeforces-1163b2%E4%B8%AA%E4%BA%BA%E9%A2%98%E8%A7%A3/</guid>
+    <description><![CDATA[题目链接如下：CF-R-558-Div2 B2. Cat Party (Hard Edition) 题意： 在 $ n $ 天里，每一天都会有一只猫来到志郎家。在第 $ i$ 天来的猫有一条颜色为 $U_i$ 的丝带。志]]></description>
+</item>
+</channel>
+</rss>

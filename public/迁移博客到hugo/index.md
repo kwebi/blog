@@ -789,7 +789,7 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest #不要用旧的，不然会失败
     steps:
       - uses: actions/checkout@v2
         with:

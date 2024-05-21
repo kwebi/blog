@@ -3,7 +3,23 @@
         <title>所有文章 - Kwebi&#39;s blog</title>
         <link>http://localhost:1313/posts/</link>
         <description>所有文章 | Kwebi&#39;s blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 19 May 2024 16:48:08 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 21 May 2024 18:43:49 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>CodeForces 1974 C题解</title>
+    <link>http://localhost:1313/codeforces-1974-c%E9%A2%98%E8%A7%A3/</link>
+    <pubDate>Tue, 21 May 2024 18:43:49 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://localhost:1313/codeforces-1974-c%E9%A2%98%E8%A7%A3/</guid>
+    <description><![CDATA[题目链接如下：C. Beautiful Triple Pairs，求最美三元组的对数（一对最美三元组指两个三元组，恰好有2个元素相同，一个不同）。 思路是分类讨论，$(a,b]]></description>
+</item>
+<item>
+    <title>CodeForces 1163B2个人题解</title>
+    <link>http://localhost:1313/codeforces-1163b2%E4%B8%AA%E4%BA%BA%E9%A2%98%E8%A7%A3/</link>
+    <pubDate>Sun, 19 May 2024 22:21:09 &#43;0800</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/codeforces-1163b2%E4%B8%AA%E4%BA%BA%E9%A2%98%E8%A7%A3/</guid>
+    <description><![CDATA[题目链接如下：CF-R-558-Div2 B2. Cat Party (Hard Edition) 题意： 在 $ n $ 天里，每一天都会有一只猫来到志郎家。在第 $ i$ 天来的猫有一条颜色为 $U_i$ 的丝带。志]]></description>
+</item>
+<item>
     <title>abc341_E</title>
     <link>http://localhost:1313/abc341_e/</link>
     <pubDate>Sun, 19 May 2024 16:48:08 &#43;0800</pubDate>
@@ -90,23 +106,6 @@
 <blockquote>
 <p>输入 <code>b</code>，<code>p</code>，<code>k</code> 的值，求 <code>b</code>^<code>p</code> mod <code>k</code> 的值。其中 <code>b</code>，<code>p</code>，<code>k</code> 为长整型数。</p>
 </blockquote>]]></description>
-</item>
-<item>
-    <title>最小生成树算法</title>
-    <link>http://localhost:1313/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95/</link>
-    <pubDate>Sat, 04 May 2019 13:49:31 &#43;0000</pubDate>
-    <author>kwebi</author>
-    <guid>http://localhost:1313/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95/</guid>
-    <description><![CDATA[<h3 id="1-prim算法">(1) Prim算法</h3>
-<p>取图中任意一个顶点 v 作为生成树的根，之后往生成树上添加新的顶点 w。在添加的顶点 w 和已经在生成树上的顶点v 之间必定存在一条边，并且该边的权值在所有连通顶点 v 和 w 之间的边中取值最小。之后继续往生成树上添加顶点，直至生成树上含有 n 个顶点为止。</p>]]></description>
-</item>
-<item>
-    <title>右值引用与移动语义</title>
-    <link>http://localhost:1313/%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%E4%B8%8E%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/</link>
-    <pubDate>Sun, 24 Feb 2019 15:06:34 &#43;0800</pubDate>
-    <author>kwebi</author>
-    <guid>http://localhost:1313/%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%E4%B8%8E%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/</guid>
-    <description><![CDATA[<p>什么是右值？在C++中，一种被广泛认可的说法是，不能取地址，没有名字的就是右值，通常位于等号右边，相反，位于等号左边的，能取地址，有名字的被称为左值。</p>]]></description>
 </item>
 </channel>
 </rss>

@@ -1,7 +1,7 @@
 ---
 title: "迁移博客到hugo+LoveIt"
 date: 2024-05-19T11:19:42+08:00
-draft: true
+draft: false
 ---
 
 ### 前言
@@ -792,7 +792,7 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest #不要用旧的，不然会失败
     steps:
       - uses: actions/checkout@v2
         with:
