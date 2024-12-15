@@ -156,36 +156,36 @@ $$</p>
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">struct Node {
-</span></span><span class="line"><span class="cl">    short v = -1; // 值，good string为0，否则为1
-</span></span><span class="line"><span class="cl">    short lv, rv;
-</span></span><span class="line"><span class="cl">    short lz = 0;//懒标记
-</span></span><span class="line"><span class="cl">};
-</span></span><span class="line"><span class="cl">void maintain(vector&lt;Node&gt;&amp; tr, int o)
-</span></span><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">    Node ln = tr[o * 2];
-</span></span><span class="line"><span class="cl">    Node rn = tr[o * 2 + 1];
-</span></span><span class="line"><span class="cl">    tr[o].lv = ln.lv;
-</span></span><span class="line"><span class="cl">    tr[o].rv = rn.rv;
-</span></span><span class="line"><span class="cl">    if (ln.v == 1 &amp;&amp; rn.v == 1 &amp;&amp; ln.rv != rn.lv) { // 维护信息,两个区间结合，判断是否为good string
-</span></span><span class="line"><span class="cl">        tr[o].v = 1;
-</span></span><span class="line"><span class="cl">    } else {
-</span></span><span class="line"><span class="cl">        tr[o].v = 0;
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">void build(vector&lt;Node&gt;&amp; tr, int l, int r, int o)
-</span></span><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">    if (l == r) {
-</span></span><span class="line"><span class="cl">        tr[o].v = 1;
-</span></span><span class="line"><span class="cl">        tr[o].lv = a[l];
-</span></span><span class="line"><span class="cl">        tr[o].rv = a[l];
-</span></span><span class="line"><span class="cl">        return;
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">    int mid = (l + r) / 2;
-</span></span><span class="line"><span class="cl">    build(tr, l, mid, o * 2);
-</span></span><span class="line"><span class="cl">    build(tr, mid + 1, r, o * 2 + 1);
-</span></span><span class="line"><span class="cl">    maintain(tr, o);
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Node</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">short</span> <span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">// 值，good string为0，否则为1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">short</span> <span class="n">lv</span><span class="p">,</span> <span class="n">rv</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">short</span> <span class="n">lz</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="c1">//懒标记
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">maintain</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;&amp;</span> <span class="n">tr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">o</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Node</span> <span class="n">ln</span> <span class="o">=</span> <span class="n">tr</span><span class="p">[</span><span class="n">o</span> <span class="o">*</span> <span class="mi">2</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Node</span> <span class="n">rn</span> <span class="o">=</span> <span class="n">tr</span><span class="p">[</span><span class="n">o</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">].</span><span class="n">lv</span> <span class="o">=</span> <span class="n">ln</span><span class="p">.</span><span class="n">lv</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">].</span><span class="n">rv</span> <span class="o">=</span> <span class="n">rn</span><span class="p">.</span><span class="n">rv</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ln</span><span class="p">.</span><span class="n">v</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">rn</span><span class="p">.</span><span class="n">v</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">ln</span><span class="p">.</span><span class="n">rv</span> <span class="o">!=</span> <span class="n">rn</span><span class="p">.</span><span class="n">lv</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 维护信息,两个区间结合，判断是否为good string
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">].</span><span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">].</span><span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">build</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;&amp;</span> <span class="n">tr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">o</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">].</span><span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">].</span><span class="n">lv</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">].</span><span class="n">rv</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">build</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">o</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">build</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">o</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">maintain</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">o</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>翻转L到R：</p>
@@ -231,44 +231,44 @@ $$</p>
 </span><span class="lnt">38
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">void revNode(Node&amp; n)
-</span></span><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">    n.lz ^= 1;
-</span></span><span class="line"><span class="cl">    n.lv ^= 1;
-</span></span><span class="line"><span class="cl">    n.rv ^= 1;
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">void lowdown(vector&lt;Node&gt;&amp; tr, int o) // 下放懒标记
-</span></span><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">    tr[o].lz = 0;
-</span></span><span class="line"><span class="cl">    revNode(tr[o * 2]);
-</span></span><span class="line"><span class="cl">    revNode(tr[o * 2 + 1]);
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">void query1(vector&lt;Node&gt;&amp; tr, int l, int r, int ql, int qr, int o)
-</span></span><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">    if (ql == l &amp;&amp; qr == r) {
-</span></span><span class="line"><span class="cl">        revNode(tr[o]);
-</span></span><span class="line"><span class="cl">        if (l == r)
-</span></span><span class="line"><span class="cl">            tr[o].lz = 0;
-</span></span><span class="line"><span class="cl">        return;
-</span></span><span class="line"><span class="cl">    }
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">revNode</span><span class="p">(</span><span class="n">Node</span><span class="o">&amp;</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span><span class="p">.</span><span class="n">lz</span> <span class="o">^=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span><span class="p">.</span><span class="n">lv</span> <span class="o">^=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span><span class="p">.</span><span class="n">rv</span> <span class="o">^=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">lowdown</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;&amp;</span> <span class="n">tr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">o</span><span class="p">)</span> <span class="c1">// 下放懒标记
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">].</span><span class="n">lz</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">revNode</span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">o</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">revNode</span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">o</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">query1</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;&amp;</span> <span class="n">tr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ql</span><span class="p">,</span> <span class="kt">int</span> <span class="n">qr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">o</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ql</span> <span class="o">==</span> <span class="n">l</span> <span class="o">&amp;&amp;</span> <span class="n">qr</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">revNode</span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">].</span><span class="n">lz</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    if (tr[o].lz == 1) { // 传递懒标记
-</span></span><span class="line"><span class="cl">        lowdown(tr, o);
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">    int mid = (l + r) / 2;
-</span></span><span class="line"><span class="cl">    if (qr &lt;= mid) {
-</span></span><span class="line"><span class="cl">        query1(tr, l, mid, ql, qr, o * 2);
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">    if (ql &gt; mid) {
-</span></span><span class="line"><span class="cl">        query1(tr, mid + 1, r, ql, qr, o * 2 + 1);
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">    if (ql &lt;= mid &amp;&amp; qr &gt; mid) {
-</span></span><span class="line"><span class="cl">        query1(tr, l, mid, ql, mid, o * 2);
-</span></span><span class="line"><span class="cl">        query1(tr, mid + 1, r, mid + 1, qr, o * 2 + 1);
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">    maintain(tr, o);
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">].</span><span class="n">lz</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 传递懒标记
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">lowdown</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">o</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">qr</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">query1</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">,</span> <span class="n">o</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ql</span> <span class="o">&gt;</span> <span class="n">mid</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">query1</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">,</span> <span class="n">o</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ql</span> <span class="o">&lt;=</span> <span class="n">mid</span> <span class="o">&amp;&amp;</span> <span class="n">qr</span> <span class="o">&gt;</span> <span class="n">mid</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">query1</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">ql</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">o</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">query1</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">qr</span><span class="p">,</span> <span class="n">o</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">maintain</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">o</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>查询L到R：</p>
@@ -308,38 +308,38 @@ $$</p>
 </span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Node query2(vector&lt;Node&gt;&amp; tr, int l, int r, int ql, int qr, int o)
-</span></span><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">    if (ql == l &amp;&amp; qr == r) {
-</span></span><span class="line"><span class="cl">        return tr[o];
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">    int mid = (l + r) / 2;
-</span></span><span class="line"><span class="cl">    if (tr[o].lz == 1) { // 传递懒标记
-</span></span><span class="line"><span class="cl">        lowdown(tr, o);
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">    if (qr &lt;= mid) {
-</span></span><span class="line"><span class="cl">        Node ln = query2(tr, l, mid, ql, qr, o * 2);
-</span></span><span class="line"><span class="cl">        return ln;
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">    if (ql &gt; mid) {
-</span></span><span class="line"><span class="cl">        Node rn = query2(tr, mid + 1, r, ql, qr, o * 2 + 1);
-</span></span><span class="line"><span class="cl">        return rn;
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">    if (ql &lt;= mid &amp;&amp; qr &gt; mid) {
-</span></span><span class="line"><span class="cl">        Node ln = query2(tr, l, mid, ql, mid, o * 2);
-</span></span><span class="line"><span class="cl">        Node rn = query2(tr, mid + 1, r, mid + 1, qr, o * 2 + 1);
-</span></span><span class="line"><span class="cl">        maintain(tr, o);
-</span></span><span class="line"><span class="cl">        Node res;
-</span></span><span class="line"><span class="cl">        res.lv = ln.lv;
-</span></span><span class="line"><span class="cl">        res.rv = rn.rv;
-</span></span><span class="line"><span class="cl">        if (ln.v == 1 &amp;&amp; rn.v == 1 &amp;&amp; ln.rv != rn.lv) { // 合并区间维护是否为好字符串信息
-</span></span><span class="line"><span class="cl">            res.v = 1;
-</span></span><span class="line"><span class="cl">        } else {
-</span></span><span class="line"><span class="cl">            res.v = 0;
-</span></span><span class="line"><span class="cl">        }
-</span></span><span class="line"><span class="cl">        return res;
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Node</span> <span class="nf">query2</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;&amp;</span> <span class="n">tr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ql</span><span class="p">,</span> <span class="kt">int</span> <span class="n">qr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">o</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ql</span> <span class="o">==</span> <span class="n">l</span> <span class="o">&amp;&amp;</span> <span class="n">qr</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">o</span><span class="p">].</span><span class="n">lz</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 传递懒标记
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">lowdown</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">o</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">qr</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Node</span> <span class="n">ln</span> <span class="o">=</span> <span class="n">query2</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">,</span> <span class="n">o</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ln</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ql</span> <span class="o">&gt;</span> <span class="n">mid</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Node</span> <span class="n">rn</span> <span class="o">=</span> <span class="n">query2</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">,</span> <span class="n">o</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">rn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ql</span> <span class="o">&lt;=</span> <span class="n">mid</span> <span class="o">&amp;&amp;</span> <span class="n">qr</span> <span class="o">&gt;</span> <span class="n">mid</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Node</span> <span class="n">ln</span> <span class="o">=</span> <span class="n">query2</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">ql</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">o</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Node</span> <span class="n">rn</span> <span class="o">=</span> <span class="n">query2</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">qr</span><span class="p">,</span> <span class="n">o</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maintain</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">o</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Node</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res</span><span class="p">.</span><span class="n">lv</span> <span class="o">=</span> <span class="n">ln</span><span class="p">.</span><span class="n">lv</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res</span><span class="p">.</span><span class="n">rv</span> <span class="o">=</span> <span class="n">rn</span><span class="p">.</span><span class="n">rv</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">ln</span><span class="p">.</span><span class="n">v</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">rn</span><span class="p">.</span><span class="n">v</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">ln</span><span class="p">.</span><span class="n">rv</span> <span class="o">!=</span> <span class="n">rn</span><span class="p">.</span><span class="n">lv</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 合并区间维护是否为好字符串信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">res</span><span class="p">.</span><span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span><span class="p">.</span><span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>主函数如下：</p>
@@ -398,7 +398,7 @@ $$</p>
 </span><span class="lnt">51
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;math.h&gt;</span><span class="cp">

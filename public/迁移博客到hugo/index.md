@@ -750,28 +750,31 @@ git push
 
 > 提示：Github 是不会把空文件夹同步的，这个问题不大，不影响后面的操作。
 
-2. 利用 github Action自动化部署
+2. 利用 github Action 自动化部署
 
 Hugo 默认会将生成的静态网页文件存放在 public/ 目录下，我们可以通过将 public/ 目录初始化为 git 仓库并关联我们的 kwebi/kwebi.github.io 远程仓库来推送我们的网页静态文件。每次修改后推送到该仓库就能修改了。通过上述命令我们可以手动发布我们的静态文件，但还是有以下弊端：
+
 - 发布步骤还是比较繁琐，本地调试后还需要切换到 public/ 目录进行上传
 - 无法对博客 .md 源文件进行备份与版本管理
 
 [Hugo 白话文 | GitHub Action 自动部署](https://zhuanlan.zhihu.com/p/470491820?utm_id=0)
 
-#### 创建ssh key
+#### 创建 ssh key
+
 ```bash
 ssh-keygen -t rsa -b 4096 -C "1565718281@qq.com"
 # Generating public/private rsa key pair. Enter file in which to save the key (/Users/tc/.ssh/id_rsa):
 
 # 输入你需要指定的文件，比如 /.ssh/id_rsa_hugo_deploy
 ```
-#### 配置博客静态资源仓库的deploy keys
 
-打开github网页，把刚刚生成的公钥（.pub结尾）放到xxx.github.io仓库的deploy keys里面
+#### 配置博客静态资源仓库的 deploy keys
+
+打开 github 网页，把刚刚生成的公钥（.pub 结尾）放到 xxx.github.io 仓库的 deploy keys 里面
 
 #### 配置博客源内容仓库的 Secrets
 
-打开github网页，把刚刚生成的私钥放到blog源仓库的repository secrets里面，记住自定义的秘钥名字，后面要用。
+打开 github 网页，把刚刚生成的私钥放到 blog 源仓库的 repository secrets 里面，记住自定义的秘钥名字，后面要用。
 
 ### github action
 
@@ -779,6 +782,7 @@ ssh-keygen -t rsa -b 4096 -C "1565718281@qq.com"
   在 D:\Hblog\blog 下新建一个文件，名称为.github，然后在.github 夹下新建一个文件夹 workflows，再在 workflows 文件夹下新建一个文件叫 gh-pages.yml 在 gh-pages.yml 输入以下内容后保存。
 
 把这次修改同步到 github
+
 ```yaml
 name: Deploy Hugo Site to Github Pages on Master Branch
 
@@ -793,13 +797,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          submodules: true # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.76.0'
+          hugo-version: "0.76.0"
           # extended: true
 
       - name: Build
@@ -810,12 +814,11 @@ jobs:
         with:
           deploy_key: ${{ secrets.BLOG_SECRET }}
           external_repository: kwebi/kwebi.github.io # remote branch
-          publish_dir: "./docs"
-        #   cname: blog.funnycode.org.cn          
+          publish_dir: "./public"
+          #   cname: blog.funnycode.org.cn
           keep_files: false # remove existing files
-          publish_branch: main  # deploying branch
+          publish_branch: main # deploying branch
           commit_message: ${{ github.event.head_commit.message }}
-
 ```
 
 - publish_dir 指定发布的目录，./docs 指 blog 项目下的 docs 目录下的内容会被发布
@@ -829,18 +832,19 @@ git add .
 git commit -m "new"
 git push
 ```
+
 成功后，找到刚刚的 Github 仓库，点击 Actions ，就可以看到我们的网站部署成功。
 
 #### kwebi.github.io 配置
 
 - 配置 Setting
-`publish_dir` 如果是`"./docs"` 相应的gitpages Source的目录也要更改
+  `publish_dir` 如果是`"./docs"` 相应的 gitpages Source 的目录也要更改
 
-- 如果github上面仓库改名后，本地git remote也需对应更新
+- 如果 github 上面仓库改名后，本地 git remote 也需对应更新
+
 ```bash
 git remote -v #查看remote仓库有哪些
 git remote set-url origin https://github.com/username/newname.git #origin可自定义
 git push origin <branch name> #可以是main或者master等
 ```
-
 

@@ -3,7 +3,31 @@
         <title>Tags - 标签 - Kwebi&#39;s blog</title>
         <link>http://localhost:1313/tags/</link>
         <description>Tags - 标签 - Kwebi&#39;s blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 26 May 2024 17:57:22 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 15 Dec 2024 15:30:01 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Python</title>
+    <link>http://localhost:1313/tags/python/</link>
+    <pubDate>Sun, 15 Dec 2024 15:30:01 &#43;0800</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/tags/python/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>爬虫</title>
+    <link>http://localhost:1313/tags/%E7%88%AC%E8%99%AB/</link>
+    <pubDate>Sun, 15 Dec 2024 15:30:01 &#43;0800</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/tags/%E7%88%AC%E8%99%AB/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>网络</title>
+    <link>http://localhost:1313/tags/%E7%BD%91%E7%BB%9C/</link>
+    <pubDate>Sun, 15 Dec 2024 15:30:01 &#43;0800</pubDate>
+    <author>kwebi</author>
+    <guid>http://localhost:1313/tags/%E7%BD%91%E7%BB%9C/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Hash</title>
     <link>http://localhost:1313/tags/hash/</link>
     <pubDate>Sun, 26 May 2024 17:57:22 &#43;0800</pubDate>
@@ -57,14 +81,6 @@
     <pubDate>Sun, 24 Feb 2019 15:06:34 &#43;0800</pubDate>
     <author>kwebi</author>
     <guid>http://localhost:1313/tags/c&#43;&#43;/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>学习</title>
-    <link>http://localhost:1313/tags/%E5%AD%A6%E4%B9%A0/</link>
-    <pubDate>Thu, 29 Nov 2018 16:48:08 &#43;0000</pubDate>
-    <author>kwebi</author>
-    <guid>http://localhost:1313/tags/%E5%AD%A6%E4%B9%A0/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

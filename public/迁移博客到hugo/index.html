@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E5%88%B0hugo\/"
-        },"genre": "posts","wordcount":  6071 ,
+        },"genre": "posts","wordcount":  5987 ,
         "url": "http:\/\/localhost:1313\/%E8%BF%81%E7%A7%BB%E5%8D%9A%E5%AE%A2%E5%88%B0hugo\/","datePublished": "2024-05-19T11:19:42+08:00","dateModified": "2024-05-19T11:19:42+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,8 +107,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">迁移博客到hugo+LoveIt</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>kwebi</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-05-19">2024-05-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 6071 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 13 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-05-19">2024-05-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 5987 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 12 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -124,8 +124,8 @@
             <li><a href="#下载">下载</a></li>
             <li><a href="#使用">使用</a></li>
             <li><a href="#gitpages">gitPages</a></li>
-            <li><a href="#创建ssh-key">创建ssh key</a></li>
-            <li><a href="#配置博客静态资源仓库的deploy-keys">配置博客静态资源仓库的deploy keys</a></li>
+            <li><a href="#创建-ssh-key">创建 ssh key</a></li>
+            <li><a href="#配置博客静态资源仓库的-deploy-keys">配置博客静态资源仓库的 deploy keys</a></li>
             <li><a href="#配置博客源内容仓库的-secrets">配置博客源内容仓库的 Secrets</a></li>
           </ul>
         </li>
@@ -1605,7 +1605,7 @@
 <p>提示：Github 是不会把空文件夹同步的，这个问题不大，不影响后面的操作。</p>
 </blockquote>
 <ol start="2">
-<li>利用 github Action自动化部署</li>
+<li>利用 github Action 自动化部署</li>
 </ol>
 <p>Hugo 默认会将生成的静态网页文件存放在 public/ 目录下，我们可以通过将 public/ 目录初始化为 git 仓库并关联我们的 kwebi/kwebi.github.io 远程仓库来推送我们的网页静态文件。每次修改后推送到该仓库就能修改了。通过上述命令我们可以手动发布我们的静态文件，但还是有以下弊端：</p>
 <ul>
@@ -1613,7 +1613,7 @@
 <li>无法对博客 .md 源文件进行备份与版本管理</li>
 </ul>
 <p><a href="https://zhuanlan.zhihu.com/p/470491820?utm_id=0" target="_blank" rel="noopener noreffer ">Hugo 白话文 | GitHub Action 自动部署</a></p>
-<h4 id="创建ssh-key">创建ssh key</h4>
+<h4 id="创建-ssh-key">创建 ssh key</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1628,10 +1628,10 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 输入你需要指定的文件，比如 /.ssh/id_rsa_hugo_deploy</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="配置博客静态资源仓库的deploy-keys">配置博客静态资源仓库的deploy keys</h4>
-<p>打开github网页，把刚刚生成的公钥（.pub结尾）放到xxx.github.io仓库的deploy keys里面</p>
+</div><h4 id="配置博客静态资源仓库的-deploy-keys">配置博客静态资源仓库的 deploy keys</h4>
+<p>打开 github 网页，把刚刚生成的公钥（.pub 结尾）放到 xxx.github.io 仓库的 deploy keys 里面</p>
 <h4 id="配置博客源内容仓库的-secrets">配置博客源内容仓库的 Secrets</h4>
-<p>打开github网页，把刚刚生成的私钥放到blog源仓库的repository secrets里面，记住自定义的秘钥名字，后面要用。</p>
+<p>打开 github 网页，把刚刚生成的私钥放到 blog 源仓库的 repository secrets 里面，记住自定义的秘钥名字，后面要用。</p>
 <h3 id="github-action">github action</h3>
 <ul>
 <li>添加 gh-pages.yml 文件
@@ -1690,13 +1690,13 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v2</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">submodules</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># Fetch Hugo themes (true OR recursive)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">    </span><span class="c"># Fetch all history for .GitInfo and .Lastmod</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">submodules</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># Fetch Hugo themes (true OR recursive)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="c"># Fetch all history for .GitInfo and .Lastmod</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Setup Hugo</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-hugo@v2</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;0.76.0&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;0.76.0&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># extended: true</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Build</span><span class="w">
@@ -1707,10 +1707,10 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">deploy_key</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.BLOG_SECRET }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">external_repository</span><span class="p">:</span><span class="w"> </span><span class="l">kwebi/kwebi.github.io</span><span class="w"> </span><span class="c"># remote branch</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;./docs&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c">#   cname: blog.funnycode.org.cn          </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;./public&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c">#   cname: blog.funnycode.org.cn</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">keep_files</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c"># remove existing files</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">publish_branch</span><span class="p">:</span><span class="w"> </span><span class="l">main </span><span class="w"> </span><span class="c"># deploying branch</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">publish_branch</span><span class="p">:</span><span class="w"> </span><span class="l">main</span><span class="w"> </span><span class="c"># deploying branch</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">commit_message</span><span class="p">:</span><span class="w"> </span><span class="l">${{ github.event.head_commit.message }}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -1739,10 +1739,10 @@
 <ul>
 <li>
 <p>配置 Setting
-<code>publish_dir</code> 如果是<code>&quot;./docs&quot;</code> 相应的gitpages Source的目录也要更改</p>
+<code>publish_dir</code> 如果是<code>&quot;./docs&quot;</code> 相应的 gitpages Source 的目录也要更改</p>
 </li>
 <li>
-<p>如果github上面仓库改名后，本地git remote也需对应更新</p>
+<p>如果 github 上面仓库改名后，本地 git remote 也需对应更新</p>
 </li>
 </ul>
 <div class="highlight"><div class="chroma">

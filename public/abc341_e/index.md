@@ -14,7 +14,7 @@ $$
 
 构造线段树：
 
-```
+```cpp
 struct Node {
     short v = -1; // 值，good string为0，否则为1
     short lv, rv;
@@ -49,7 +49,7 @@ void build(vector<Node>& tr, int l, int r, int o)
 
 翻转L到R：
 
-```
+```cpp
 void revNode(Node& n)
 {
     n.lz ^= 1;
@@ -92,7 +92,7 @@ void query1(vector<Node>& tr, int l, int r, int ql, int qr, int o)
 
 查询L到R：
 
-```
+```cpp
 Node query2(vector<Node>& tr, int l, int r, int ql, int qr, int o)
 {
     if (ql == l && qr == r) {
@@ -129,7 +129,7 @@ Node query2(vector<Node>& tr, int l, int r, int ql, int qr, int o)
 
 主函数如下：
 
-```
+```cpp
 #include <algorithm>
 #include <iostream>
 #include <map>
